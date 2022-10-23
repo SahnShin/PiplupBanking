@@ -18,17 +18,17 @@ public class PenguinBank {
      */
     public static void parentAccount(Scanner console) {
         System.out.print("Enter username: ");
-        String username = console.next();
+        String username = console.nextLine();
         while (username.length() == 0) {
-            System.out.println("No input, try again: ");
-            username = console.next();
+            System.out.print("No input, try again: ");
+            username = console.nextLine();
         }
 
         System.out.print("Enter password: ");
-        String password = console.next();
+        String password = console.nextLine();
         while (password.length() == 0) {
-            System.out.println("No input, try again: ");
-            password = console.next();
+            System.out.print("No input, try again: ");
+            password = console.nextLine();
         }
         System.out.println("");
     }
@@ -104,11 +104,11 @@ public class PenguinBank {
         System.out.print("Choose an item --> Small(s), Big(b), or Costumes(C): ");
         String item = console.next();
 
-        if (item == "S" || item == "s"){
+        if (item.equalsIgnoreCase("S")) {
             System.out.println("Cost: 500 fish");
             System.out.println("Kite     Tophat     Briefcase     Soda\n");
 
-        } else if (item == "B" || item == "b") {
+        } else if (item.equalsIgnoreCase("B")) {
             System.out.println("Cost: 2500 fish");
             System.out.println("Drumset     Bike\n");
         } else {
@@ -118,11 +118,6 @@ public class PenguinBank {
 
     }
 
-    public static String chooseRealItem(Scanner console) {
-        System.out.println("Which item would you like to buy? ");
-        String item = console.next();
-        return item;
-    }
 
     public static double realItemPrice(String item, Scanner console) {
 
@@ -139,16 +134,11 @@ public class PenguinBank {
         } else if(item.equalsIgnoreCase("Stationary")) {
             return Constants.STATIONARY;
         } else {
-            System.out.println("How much into savings?");
+            System.out.print("How much into savings? ");
             double savings = console.nextDouble();
+            System.out.println("");
             return savings;
         }
-    }
-
-    public static String choosePetItem(Scanner console) {
-        System.out.println("Which item would you like to buy? ");
-        String item = console.next();
-        return item;
     }
 
 

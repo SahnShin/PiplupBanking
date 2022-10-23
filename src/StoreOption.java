@@ -1,48 +1,52 @@
 import java.util.Scanner;
 
 public class StoreOption {
-    public static String storeProcess(double deposit, double savings) {
+
+    public static double petStoreProcess(String store, double deposit, double savings) {
         Scanner console = new Scanner(System.in);
-        String store = PenguinBank.goToStore(console);
-
-        while (!store.equals("R") && !store.equals("r") && !store.equals("P") && !store.equals("p")) {
-            System.out.println("Invalid input, try again");
-            store = console.next();
-        }
-
-        if (store.equals("R") || store.equals("r")) {
-            PenguinBank.printRealStore();
-            String realItem = PenguinBank.chooseRealItem(console);
-            double realItemPrice = PenguinBank.realItemPrice(realItem, console);
-
-            deposit = deposit - realItemPrice;
-            savings = savings + (realItemPrice * Constants.FISH);
-            System.out.printf("Remaining balance: $%.2f\n", deposit);
-            System.out.printf("Remaining savings: <>< %.0f\n ", savings);
-            System.out.print("Would you like to purchase again? (y/n): ");
-            String answer = console.next();
-            return answer;
+        if (savings == 0) {
+            System.out.println("You have no fish to spend. Go back and put some money into" +
+                    " savings from the Real Store to buy items for your penguin!\n");
+           return 0.00;
         } else {
-
-            if (savings == 0) {
-                System.out.println("You have no fish to spend. Go back and put some money into" +
-                        " savings from the Real Store to buy items for your penguin!\n");
-                System.out.print("Would you like to purchase again? (y/n): ");
-                String answer = console.next();
-                return answer;
-
-            } else {
-                PenguinBank.printPetStore(console);
-                String petItem = PenguinBank.choosePetItem(console);
-                double petItemPrice = PenguinBank.petItemPrice(petItem);
-                savings = savings - petItemPrice;
-                System.out.printf("Remaining balance: $%.2f\n", deposit);
-                System.out.printf("Remaining savings: $%.0f\n", savings);
-                System.out.print("Would you like to purchase again? (y/n): ");
-                String answer = console.next();
-                return answer;
-            }
+            PenguinBank.printPetStore(console);
+            String petItem = choosePetItem(console);
+            return PenguinBank.petItemPrice(petItem);
 
         }
     }
+
+
+    public static double depositAmount(double deposit,double itemPrice) {
+        deposit = deposit - itemPrice;
+
+        return deposit;
+    }
+
+    public static double savingsAmount(double savings, double itemPrice) {
+        savings += itemPrice;
+        return savings;
+    }
+
+    public static double fishAmount(double fish,double itemPrice) {
+        return fish + (itemPrice * 100);
+    }
+
+    public static String chooseRealItem(Scanner console) {
+        System.out.print("Which item would you like to buy? ");
+        String item = console.next();
+        System.out.println("");
+        return item;
+    }
+
+    public static String choosePetItem(Scanner console) {
+        System.out.print("Which item would you like to buy? ");
+        String item = console.next();
+        System.out.println("");
+        return item;
+    }
+
+
+
+
 }

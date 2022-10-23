@@ -1,27 +1,27 @@
 public class PenguinASCII {
         public static String kite() {
             String kite = " /|\\\n" +
-                    "   /_|_\\   " +
-                    "   \\ | /  " +
-                    "    \\|/   " +
-                    "     '.   " +
-                    "       '.  " +
-                    "        {o_   " +
+                    "   /_|_\\   \n" +
+                    "   \\ | /  \n" +
+                    "    \\|/   \n" +
+                    "     '.   \n" +
+                    "       '.  \n" +
+                    "        {o_   \n" +
                     "        (')_ ";
             return kite;
         }
 
         public static String tophat() {
-            String topHat = "_||_" +
-                    " (o_" +
-                    " //\\" +
+            String topHat = "_||_\n" +
+                    " (o_\n" +
+                    " //\\\n" +
                     " V_/_";
             return topHat;
         }
 
         public static String briefcase() {
-            String briefcase = " (o_" +
-                    " //\\" +
+            String briefcase = " (o_\n" +
+                    " //\\\n" +
                     "[ ]/_";
             return briefcase;
         }
