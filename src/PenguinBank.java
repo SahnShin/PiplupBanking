@@ -4,8 +4,7 @@ public class PenguinBank {
 
     public static void printRules() {
         System.out.println("Welcome to: Piplup Bank");
-        System.out.println("Slogan"); //CHANGE
-
+        System.out.println("The Ultimate Children's Checking Account");
         System.out.println("Care for your penguin by adding to your savings!\n");
         System.out.println("You can deposit money to your child's account, ");
         System.out.println("and they can spend it on real products or items for their pet penguin.\n");
@@ -21,7 +20,7 @@ public class PenguinBank {
     }
 
     public static String pipName(Scanner console) {
-        PenguinASCII.standard();
+        System.out.println(PenguinASCII.standard());
         System.out.println("Say hi to your pet piplup.");
         System.out.println("Your piplup needs a name. ");
         System.out.println("Give them a name and make them a part of your family! ");
@@ -165,40 +164,57 @@ public class PenguinBank {
     public static double petItemPrice(String item) {
 
         if (item.equalsIgnoreCase("Kite")) {
-            System.out.println(PenguinASCII.kite());
             return Constants.KITE;
         } else if (item.equalsIgnoreCase("Tophat")) {
-            System.out.println(PenguinASCII.tophat());
             return Constants.TOPHAT;
         } else if (item.equalsIgnoreCase("Briefcase")) {
-            System.out.println(PenguinASCII.briefcase());
             return Constants.BRIEFCASE;
         } else if (item.equalsIgnoreCase("Soda")) {
-            System.out.println(PenguinASCII.soda());
             return Constants.SODA;
         } else if (item.equalsIgnoreCase("Drumset")) {
-            System.out.println(PenguinASCII.drumset());
             return Constants.DRUMSET;
         } else if (item.equalsIgnoreCase("Bike")) {
-            System.out.println(PenguinASCII.bike());
             return Constants.BIKE;
         } else if (item.equalsIgnoreCase("Luke-Skywalker")) {
-            System.out.println(PenguinASCII.lukeSkywalker());
             return Constants.LUKE_SKYWALKER;
         } else if (item.equalsIgnoreCase("Darth-Vader")) {
-            System.out.println(PenguinASCII.darthVader());
             return Constants.DARTH_VADER;
         } else if (item.equalsIgnoreCase("Robinhood")){
-            System.out.println(PenguinASCII.robinhood());
             return Constants.ROBINHOOD;
         } else if (item.equalsIgnoreCase("Angel")) {
-            System.out.println(PenguinASCII.angel());
             return Constants.ANGEL;
         } else if (item.equalsIgnoreCase("Devil")){
-            System.out.println(PenguinASCII.devil());
             return Constants.DEVIL;
         } else {
             return 0.00;
+        }
+    }
+
+    public static void printPenguin(String item) {
+        if (item.equalsIgnoreCase("Kite")) {
+            System.out.println(PenguinASCII.kite());
+        } else if (item.equalsIgnoreCase("Tophat")) {
+            System.out.println(PenguinASCII.tophat());
+        } else if (item.equalsIgnoreCase("Briefcase")) {
+            System.out.println(PenguinASCII.briefcase());
+        } else if (item.equalsIgnoreCase("Soda")) {
+            System.out.println(PenguinASCII.soda());
+        } else if (item.equalsIgnoreCase("Drumset")) {
+            System.out.println(PenguinASCII.drumset());
+        } else if (item.equalsIgnoreCase("Bike")) {
+            System.out.println(PenguinASCII.bike());
+        } else if (item.equalsIgnoreCase("Luke-Skywalker")) {
+            System.out.println(PenguinASCII.lukeSkywalker());
+        } else if (item.equalsIgnoreCase("Darth-Vader")) {
+            System.out.println(PenguinASCII.darthVader());
+        } else if (item.equalsIgnoreCase("Robinhood")){
+            System.out.println(PenguinASCII.robinhood());
+        } else if (item.equalsIgnoreCase("Angel")) {
+            System.out.println(PenguinASCII.angel());
+        } else if (item.equalsIgnoreCase("Devil")){
+            System.out.println(PenguinASCII.devil());
+        } else {
+            System.out.println("Error: no penguin ascii found");
         }
     }
 

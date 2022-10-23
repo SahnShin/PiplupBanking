@@ -12,7 +12,7 @@ public class PenguinASCII {
         }
 
         public static String tophat() {
-            String topHat = "_||_\n" +
+            String topHat = " _||_\n" +
                     " (o_\n" +
                     " //\\\n" +
                     " V_/_";
@@ -66,7 +66,7 @@ public class PenguinASCII {
         }
 
         public static String robinhood(){
-            String robin = "(o_ /\\\n" +
+            String robin = "(o_ /\\ \n" +
                     "/\\\\< -)->\n" +
                     "\\_/_\\/";
             return robin;
@@ -81,9 +81,9 @@ public class PenguinASCII {
         }
 
         public static String devil() {
-            String devil = "() \n" +
-                    "(o_\n" +
-                    "//\\ \n" +
+            String devil = " () \n" +
+                    " (o_\n" +
+                    " //\\ \n" +
                     "<-V_/_ \n";
             return devil;
 

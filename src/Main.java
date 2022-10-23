@@ -49,7 +49,12 @@ public class Main {
                     PenguinBank.printPetStore(console);
                     String petItem = StoreOption.choosePetItem(console);
                     double petItemPrice = PenguinBank.petItemPrice(petItem);
-                    fish = StoreOption.fishAmount(fish,petItemPrice);
+                    if (petItemPrice < fish) {
+                        System.out.println("You don't have enough fish! Go back and save more to try again.");
+                    } else {
+                        PenguinBank.printPenguin(petItem);
+                        fish = StoreOption.fishAmount(fish, petItemPrice);
+                    }
                 }
 
             }
