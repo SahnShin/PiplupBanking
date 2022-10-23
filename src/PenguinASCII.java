@@ -1,6 +1,6 @@
 public class PenguinASCII {
         public static String kite() {
-            String kite = " /|\\\n" +
+            String kite = "    /|\\\n" +
                     "   /_|_\\   \n" +
                     "   \\ | /  \n" +
                     "    \\|/   \n" +
@@ -87,6 +87,28 @@ public class PenguinASCII {
                     "<-V_/_ \n";
             return devil;
 
+        }
+
+        public static String logo() {
+            String logo = "         *\n" +
+                    "\n" +
+                    "                         *  _|_\n" +
+                    "                         .-' * '-. *\n" +
+                    "                        /       * \\\n" +
+                    "                     *  ^^^^^|^^^^^\n" +
+                    "                         .~. |  .~.\n" +
+                    "                        / ^ \\| / ^ \\\n" +
+                    "                       (|   |J/|   |)\n" +
+                    "                       '\\   /`\"\\   /`\n" +
+                    "             -- '' -'-'  ^`^    ^`^  -- '' -'-' ";
+            return logo;
+        }
+
+        public static String standard() {
+            String standard = "(o_\n" +
+                    "//\\\n" +
+                    "V_/_";
+            return standard;
         }
 
 }

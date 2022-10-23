@@ -2,21 +2,6 @@ import java.util.Scanner;
 
 public class StoreOption {
 
-    public static double petStoreProcess(String store, double deposit, double savings) {
-        Scanner console = new Scanner(System.in);
-        if (savings == 0) {
-            System.out.println("You have no fish to spend. Go back and put some money into" +
-                    " savings from the Real Store to buy items for your penguin!\n");
-           return 0.00;
-        } else {
-            PenguinBank.printPetStore(console);
-            String petItem = choosePetItem(console);
-            return PenguinBank.petItemPrice(petItem);
-
-        }
-    }
-
-
     public static double depositAmount(double deposit,double itemPrice) {
         deposit = deposit - itemPrice;
 

@@ -6,10 +6,27 @@ public class PenguinBank {
         System.out.println("Welcome to: Piplup Bank");
         System.out.println("Slogan"); //CHANGE
 
-        System.out.println("Care for your penguin by adding to your savings!");
+        System.out.println("Care for your penguin by adding to your savings!\n");
         System.out.println("You can deposit money to your child's account, ");
-        System.out.println("and they can spend it on real products or items for their pet penguin");
+        System.out.println("and they can spend it on real products or items for their pet penguin.\n");
         System.out.println("Set up your account today for your child and watch their knowledge in savings grow!\n");
+    }
+
+    public static String welcome(Scanner console) {
+        System.out.print("Hi there! What's your name? ");
+        String name = console.next();
+        System.out.println("Nice to meet you " + name + "!");
+        System.out.println("");
+        return name;
+    }
+
+    public static String pipName(Scanner console) {
+        PenguinASCII.standard();
+        System.out.println("Say hi to your pet piplup.");
+        System.out.println("Your piplup needs a name. ");
+        System.out.println("Give them a name and make them a part of your family! ");
+        String pipName = console.next();
+        return pipName;
     }
 
     /**
@@ -62,7 +79,7 @@ public class PenguinBank {
     public static double getDeposit(Scanner console) {
         System.out.print("Enter deposit (between $5-100 inclusive): ");
         double deposit = console.nextDouble();
-//Will throw error when attempting to type jfkdsjfkdls
+
         while (deposit < 5 || deposit > 100) {
             System.out.print("Invalid input, try again: ");
             deposit = console.nextDouble();
@@ -133,16 +150,20 @@ public class PenguinBank {
             return Constants.APPS;
         } else if(item.equalsIgnoreCase("Stationary")) {
             return Constants.STATIONARY;
-        } else {
+        } else if(item.equalsIgnoreCase("Savings")){
             System.out.print("How much into savings? ");
             double savings = console.nextDouble();
             System.out.println("");
             return savings;
+        } else {
+            System.out.println("Invalid input, try again. ");
+            return 0.00;
         }
     }
 
 
     public static double petItemPrice(String item) {
+
         if (item.equalsIgnoreCase("Kite")) {
             System.out.println(PenguinASCII.kite());
             return Constants.KITE;
@@ -173,9 +194,11 @@ public class PenguinBank {
         } else if (item.equalsIgnoreCase("Angel")) {
             System.out.println(PenguinASCII.angel());
             return Constants.ANGEL;
-        } else {
+        } else if (item.equalsIgnoreCase("Devil")){
             System.out.println(PenguinASCII.devil());
             return Constants.DEVIL;
+        } else {
+            return 0.00;
         }
     }
 
